@@ -2,6 +2,7 @@ package com.app.demo.controller;
 
 import com.app.demo.dto.Person;
 import com.app.demo.service.PeopleService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,21 +17,17 @@ import java.util.UUID;
 /**
  * A controller providing endpoins allowing us working with people data
  */
+@RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "/people")
 public class PeopleController {
   private final PeopleService peopleService;
 
-  @Autowired
-  public PeopleController(PeopleService peopleService) {
-    this.peopleService = peopleService;
-  }
-
   /**
    * An endpoint returning us a list of all people from the database
    */
-  @GetMapping(value = "/find-all")
-  public Collection<Person> findAll() {
+  @GetMapping
+  public Collection<Person> getAll() {
     return peopleService.getAllPeople();
   }
 

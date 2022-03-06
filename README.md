@@ -12,4 +12,4 @@ $ bin/kafka-console-producer.sh --topic people-events --bootstrap-server localho
 { "uniqueIdentificationNumber":"72b1c285-2e3b-4715-8562-6c7051ab6417", "firstName": "Ivan", "lastName": "Petrov", "age": "22" }
 
 # Swagger:
-http://localhost:8080/swagger-ui/
+http://localhost:8080/simple-kafka-demo/swagger-ui/
